@@ -1,0 +1,482 @@
+/*MASTER*/
+/* colore linea: #d287ff colore testo:#bdffb6 */
+html{
+    background-color: black;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+body{
+    color: white;
+    overflow: hidden;
+}
+
+ /*per nascondere la barra di scorrimento*/
+::-webkit-scrollbar{
+    display: none;
+}
+
+main{
+    width: 100%;
+    position:absolute;
+    top:50px;
+    bottom: 0px;
+    left: 1%;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Scrolling: */
+
+
+p {
+    margin: 0px;
+    white-space:pre-line; /*oppure usa pre-wrap o pre*/
+}
+
+
+/*NAVIGATION BAR*/
+
+.nav-bar-wrap {
+    display:flex; /*metto vicini i due blocchi, left e right side*/
+    justify-content: space-between; /*separo i due blocchi*/
+    position: fixed;
+    padding: 10px;
+    height: 30px;
+    width: 100%;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 2s;
+    margin-right: 20px;
+    margin-left: 10px;
+    z-index: +1;
+    font-size: 1.2em;
+}
+
+.nav-bar-wrap a{
+    transition: color 1s;
+    color: white;
+}
+
+.nav-bar-wrap a:hover{
+    border-bottom: 1px solid #bdffb6;
+    color: #bdffb6;
+}
+
+.left-side {
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.left-side > a{
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.right-side{
+    display: flex;
+    margin-right: 10%;
+    align-items: center;
+    align-content: center;
+}
+
+/*LOGO*/
+
+.logo {
+    height: 40px;
+    }
+
+/* INTRODUCTION */
+
+.introduction{
+    display: inline-block;
+    height: 98%;
+}
+
+@media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .introduction {
+        height: max-content;
+      }
+    }
+
+
+/* PRESENTATION, @help: animista.com */
+
+.presentation{
+    display: inline-block;
+    top: 10%;
+    left: 20%;
+    height: 80%;
+    padding: 30px ;
+    border-left: 2px solid #bdffb6 ;
+}
+
+.my-name, .my-job {
+    display:inline;
+    font-size: larger;
+	-webkit-animation: focus-in-expand-fwd 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-expand-fwd 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes focus-in-expand-fwd {
+    0% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-800px);
+              transform: translateZ(-800px);
+        -webkit-filter: blur(12px);
+              filter: blur(12px);
+        opacity: 0;
+        color: white;
+            }
+    100% {
+        -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        -webkit-filter: blur(0);
+                filter: blur(0);
+        opacity: 1;
+        color: #d287ff ;
+            }
+    }
+        
+/*MAIN*/
+    .main {
+        padding-top: 50px;
+    }
+
+/*TIMELINE*/
+
+.main-timeline-style{
+    position: relative;
+    display: inline-block;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline-style::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+
+.timeline-conteiner {
+    padding: 10px 40px;
+    bottom: -10%;
+    position: relative;
+    border-left: 2px solid #bdffb6;
+    height:max-content;
+}
+
+.timeline-conteiner::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -10px;
+    top: 15px;
+    z-index: 1;
+}
+
+.timeline-content::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    left: 0;
+    width: 0;
+    z-index: 1;
+    right: 15px;
+  }
+
+.timeline-content{
+    padding: 10px 15px;
+    position: relative;
+ }
+
+.argument {
+    padding-top: 1%;
+    font-size: 2em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+      .timeline::after {
+        left: 31px;
+        border-left: 5px solid #bdffb6;
+      }
+    }
+
+/* Animation for the border in the timeline 
+.timeline-container {
+	-webkit-animation: line-draw-top-to-bottom 3s ;
+    animation: line-draw-top-to-bottom 3s ;
+}
+
+@keyframes line-draw-top-to-bottom {
+    0% {
+        }
+    100% {
+        border-left: ; }
+    }
+*/
+
+/* ABOUT - LANGUAGES */
+        
+    .knowledge-column {
+    display:flex; /*metto vicini i due blocchi, left e right side*/
+    justify-content: space-between; /*separo i due blocchi*/
+    position: relative;
+    width: 100%;
+}
+
+.knowledge-written {
+    width:60%;
+    display:flex;
+}
+
+.knowledge-slideshow {
+    width: 40%;
+    display:flex;
+    position:relative;
+    align-content:center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.mySlide{
+    display:flex;
+    padding: 5%;
+    box-shadow:0 0 10px rgba(250, 249, 249, 0.4);
+  }
+
+  /*Rende il sito un po' più responsive*/
+@media screen and (max-width: 600px) {
+    
+    .knowledge-column{
+        display:block;
+        width: fit-content;
+    }
+  }
+
+/*PORTFOLIO*/
+
+.portfolio-description {
+    color: white;
+}
+
+.portfolio-description a{
+        color: white;
+        text-decoration: none;
+        transition: color 1s; 
+        display:inline;
+}
+
+.grid-container {
+    width: 70%;
+    display:flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.grid-item{
+    position:relative;
+    margin: 0px;
+}
+
+.portfolio-bg-img{
+    height: 250px;
+    width: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 600px) {
+    .portfolio-description {
+        width: 500px;
+        margin-right: 10%;
+    }
+  }
+
+/* need to find a way to make just the picture blur, not everything. 
+z-index does not work
+
+.portfolio-bg-img:hover{
+    opacity: 0.6;
+    filter:blur(5px);
+}
+*/
+
+.img-text-wrap{
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.img-text-wrap .subtitle{
+    transition: 1s;
+    font-weight: 600;
+    color: rgba(85,107,47,0.5);
+    width:100%;
+}
+
+.img-text-wrap:hover .subtitle {
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+    color: darkolivegreen;
+}
+
+.subtitle {
+    font-size: 12px;
+    align-content:center;
+    position: relative;
+    top:10%;
+    left: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .subtitle {
+        font-size: 0.5em;
+    }
+  }
+
+.img-logo-wrap{
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+ /* BUTTON*/
+.button, .form-element.submit {
+    display: inline;
+    align-content:center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    padding: 6px 12px;
+    background-color: black;
+    color: rgb(189, 255, 182);
+}
+
+button:hover{
+    color: #d287ff;
+    border: 1px solid #d287ff ;
+}
+
+/* CONTACTS */
+.contact-wrap{
+    display:flex; 
+    justify-content: space-between;
+}
+
+/* LEFT SIDE*/
+
+.contact-info{
+    display:flex;
+    width: min-content;
+    margin-right: 20px;
+    align-content:center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.my-pic{
+    height: calc(100%/3);
+    width: auto;
+    border-radius: 50%;
+}
+
+.contact-area{
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.social-area, .social-element{
+    display:inline;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.img-social {
+    width:50px;
+    height: 50px;
+}
+/* RIGHT SIDE*/
+
+.written-right{
+    display:flex;
+    width: 750px;
+}
+
+.form-element{
+    display:flex; 
+    justify-content: space-between;
+    padding: 5px 10px 10px 5px;
+}
+
+label{
+    display:flex;
+    float:left;
+    padding-right: 10px;
+}
+
+input, textarea{
+    display: flex;
+    float: right;
+    height: 30px;
+    width: 500px;
+    background-color: black;
+    color:white;
+    border: black 1px solid;
+}
+
+textarea{
+    height: 100px;
+    display:block;
+}
+
+input:hover, textarea:hover, input:focus, textarea:focus{
+    border: #d287ff 1px solid;
+    outline: none;
+}
+
+.form-element.submit{
+    float:right;
+    width: min-content;
+}
+
+#submit{
+    align-content:center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font: 600 25px Georgia;
+}
